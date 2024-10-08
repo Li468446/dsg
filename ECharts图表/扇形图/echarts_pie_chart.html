@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ECharts 扇形图示例</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script>
+        // 初始化图表
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {"legend": {"data": ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"]}, "series": [{"data": [{"name": "Red", "value": 12}, {"name": "Blue", "value": 19}, {"name": "Yellow", "value": 3}, {"name": "Green", "value": 5}, {"name": "Purple", "value": 2}, {"name": "Orange", "value": 3}], "emphasis": {"itemStyle": {"shadowBlur": 10, "shadowColor": "rgba(0, 0, 0, 0.5)", "shadowOffsetX": 0}}, "name": "\u8bbf\u95ee\u6765\u6e90", "radius": "55%", "type": "pie"}], "title": {"text": "\u6247\u5f62\u56fe\u793a\u4f8b"}, "tooltip": {}};
+
+        // 使用刚指定的配置项和数据显示图表
+        myChart.setOption(option);
+
+        // 窗口大小变化时自动更新图表
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    </script>
+</body>
+</html>

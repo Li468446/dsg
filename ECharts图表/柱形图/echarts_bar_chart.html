@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ECharts 柱形图示例</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script>
+        // 初始化图表
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {"legend": {"data": ["\u5404\u5e74\u5ea6\u6570\u636e\u5c55\u793a"]}, "series": [{"data": [12, 19, 3, 5, 2, 3], "name": "\u6570\u636e", "type": "bar"}], "title": {"text": "\u67f1\u5f62\u56fe\u5c55\u793a"}, "tooltip": {"trigger": "axis"}, "xAxis": {"data": ["\u516c\u53f81", "\u516c\u53f82", "\u516c\u53f83", "\u516c\u53f84", "Blue", "Yellow", "Green", "Purple", "Orange"], "type": "category"}, "yAxis": {"type": "value"}};
+
+        // 使用刚指定的配置项和数据显示图表
+        myChart.setOption(option);
+
+        // 窗口大小变化时自动更新图表
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    </script>
+</body>
+</html>

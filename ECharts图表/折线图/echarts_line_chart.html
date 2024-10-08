@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ECharts 折线图示例</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 600px;height:400px;"></div>
+    <script>
+        // 初始化图表
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        var option = {"legend": {"data": ["\u6570\u636e"]}, "series": [{"data": [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3], "name": "\u6570\u636e", "type": "line"}], "title": {"text": "\u6298\u7ebf\u56fe"}, "tooltip": {"trigger": "axis"}, "xAxis": {"data": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "type": "category"}, "yAxis": {"type": "value"}};
+
+        // 使用刚指定的配置项和数据显示图表
+        myChart.setOption(option);
+
+        // 窗口大小变化时自动更新图表
+        window.addEventListener('resize', function() {
+            myChart.resize();
+        });
+    </script>
+</body>
+</html>

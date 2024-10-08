@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扇形图示例</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>  # 引入Chart.js库
+</head>
+<body>
+    <canvas id="myChart" width="400" height="400"></canvas>  # 创建画布元素
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');  # 获取画布上下文
+        var myChart = new Chart(ctx, {  # 创建Chart对象
+            type: 'pie',  # 图表类型为饼图
+            data: {"datasets": [{"backgroundColor": ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF", "#FF9F40"], "data": [12, 19, 3, 5, 2, 3]}], "labels": ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"]},  # 数据集
+            options: {"maintainAspectRatio": false, "responsive": true, "scales": {"y": {"beginAtZero": true}}}  # 配置项
+        });
+    </script>
+</body>
+</html>
